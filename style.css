@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #faf9f6;
+  color: rgb(71, 67, 67);
+  
+}
+
+
+/* styling the navbar */
+nav {
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.925);
+  color: tomato;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 2px 4px 8px grey;
+  transition: all 1s ease;
+}
+
+.socials {
+  display: flex;
+  margin: 1em 0.5em;
+
+  p {
+    padding: 0.1em;
+  }
+}
+
+.hamburger-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 100vw; */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.bx-cart {
+  z-index: 2;
+  top: 0;
+  font-size: 2.5em;
+  color: tomato;
+  padding: 0.2em;
+}
+
+
+#cart-count {
+  font-size: .8em;
+  position: absolute;
+  text-align: center;
+  right: 2%;
+  bottom: 10%;
+  padding: 0.2em;
+  width: 1.4em;
+  background-color: rgb(58, 54, 54);
+  color: white;
+  border-radius: 50%;
+}
+
+.nav-mobile {
+  font-size: 2em;
+  padding: 0 0.5em;
+}
+
+#cancel-btn {
+  display: none;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+.animation-reveal {
+  animation: curtain 0.5s ease;
+}
