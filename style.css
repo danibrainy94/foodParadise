@@ -763,15 +763,15 @@ a {
 
 a:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid tomato;
+  border-bottom: 2px solid rgb(215, 108, 90);
   background: rgba(255, 255, 255, 0.533);
 }
 
 
   /* Footer Styles */
     footer {
-      background-color: tomato;
-      color: white;
+      background-color: rgb(229, 120, 101);
+      color: rgb(83, 81, 81);
       padding: 40px 20px;
       display: flex;
       flex-wrap: wrap;
@@ -827,6 +827,7 @@ a:hover {
       margin: 0 8px;
       display: inline-block;
       transition: transform 0.3s ease;
+      color: white;
     }
 
     .social-links a:hover {
