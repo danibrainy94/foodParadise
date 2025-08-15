@@ -58,7 +58,7 @@ const generateProducts = (product = productList) => {
         productDiv.innerHTML = `
             
             <i class='bx  bx-heart'></i>
-            <img class="product-img" src="./food-img/${prod.img}" alt="product-image">
+            <img class="product-img" src="./food-img/${prod.img}" alt="product-image" loading="lazy">
             <h2 class="box-title">${prod.productName}</h2>
             <p class="product-info">${prod.prodDescript}</p>
 
