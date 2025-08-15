@@ -197,6 +197,11 @@ li {
   transform: scale(1);
 }
 
+.cart-title {
+  padding: .5em;
+  font-size: 1.3em;
+}
+
 .cart-items {
   padding: .5em;
   margin: .3em 0;
@@ -228,6 +233,7 @@ li {
   padding: .5em;
 
   button {
+    background-color: #9ed5f2;
     width: 7em;
     border: none;
     font-size: 1.2em;
@@ -246,7 +252,7 @@ li {
   align-items: center;
   button {
     all: unset;
-    font-size: 1em;
+    font-size: .8em;
     font-weight: 800;
     background-color: tomato;
     color: white;
@@ -272,6 +278,7 @@ li {
   span {
     font-size: 1.3em;
     padding: .1em;
+    margin: 0 .2em;
   }
 }
 
