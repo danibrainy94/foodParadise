@@ -531,7 +531,7 @@ li {
 /* styling the attestation section of the page */
 
 .attest-container {
-  background-color: rgb(229, 120, 101);;
+  background-color: rgb(229, 120, 101);
   display: flex;
   height: 55em;
   flex-direction: column-reverse;
@@ -966,7 +966,7 @@ a:hover {
       color: rgba(255, 255, 255, 0.8);
     }
 
-}
+
 
 /* @media (min-width: 1024px) {
   
