@@ -768,6 +768,76 @@ a:hover {
 }
 
 
+  /* Footer Styles */
+    footer {
+      background-color: tomato;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .footer-section {
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: white;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin: 10px 0;
+      font-size: 0.95em;
+    }
+
+    .footer-section ul li a {
+      color: white;
+      text-decoration: none;
+      transition: text-shadow 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    }
+
+    .social-links a {
+      font-size: 1.4em;
+      margin: 0 8px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    .contact-info li:nth-child(odd) {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
 
 
 /**************** *********************/
@@ -877,6 +947,28 @@ a:hover {
   .cart-items-container {
     top: 3.8%;
   }
+
+
+   footer {
+        text-align: left;
+        flex-direction: row;
+      }
+      .footer-section {
+        width: auto;
+        text-align: left;
+      }
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.9em;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
 }
 
 /* @media (min-width: 1024px) {
