@@ -206,9 +206,9 @@ const cartDisplayToPage = () => {
                 <img src="./food-img/${itemsInfo.img}" alt="cart-img" class="cart-img">
                 <p>${itemsInfo.productName}</p>
                 <div class="cart-buttons-container">
-                    <button class="cart-btns-left">&lt;</button>
+                    <button class="cart-btns-left"><i class='bx  bx-minus'  ></i> </button>
                     <span>${cart_obj.quantity}</span>
-                    <button class="cart-btns-right">&gt;</button>
+                    <button class="cart-btns-right"><i class='bx  bx-plus'  ></i> </button>
                 </div>
             `;
             cartItemsWrapper.appendChild(cartItems);
