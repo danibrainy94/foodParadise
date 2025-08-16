@@ -177,6 +177,9 @@ li {
 .cart-items-container {
   background-color: rgba(255, 255, 255, 0.991);
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   z-index: 2;
   top: 3.5em;
   right: -80%;
@@ -226,6 +229,11 @@ li {
   }
 }
 
+.cart-items-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .cart-control-container {
   display: inline-block;
   display: flex;
@@ -234,7 +242,7 @@ li {
 
   button {
     background-color: #9ed5f2;
-    width: 7em;
+    width: 6.5em;
     border: none;
     font-size: 1.2em;
     padding: .5em;
