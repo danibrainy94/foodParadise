@@ -259,7 +259,7 @@ function flyToCart(itemElement, cartElement) {
     img.style.top = itemRect.top + 'px';
     img.style.width = itemRect.width + 'px';
     img.style.height = itemRect.height + 'px';
-    img.style.transition = 'all 0.8s cubic-bezier(.55,-0.04,.91,.94)';
+    img.style.transition = 'all 0.3s cubic-bezier(.55,-0.04,.91,.94)';
     img.style.zIndex = 1000;
     document.body.appendChild(img);
 
@@ -269,7 +269,7 @@ function flyToCart(itemElement, cartElement) {
         img.style.width = '30px';
         img.style.height = '5px';
         img.style.opacity = '0.6';
-    }, .1);
+    }, 10);
 
     img.addEventListener('transitionend', () => img.remove());
 
