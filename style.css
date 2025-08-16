@@ -683,6 +683,7 @@ li {
 }
 
 .chef-area-wrapper {
+  height: 35em;
   display: flex;
   align-items: flex-start;
 }
@@ -969,7 +970,7 @@ a:hover {
   }
 
 
-   footer {
+    footer {
         text-align: left;
         flex-direction: row;
       }
@@ -991,12 +992,9 @@ a:hover {
 
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
    #items-container {
     /* margin: 1em; */
-    display: grid;
     grid-template-columns: repeat(4, 3fr);
-    gap: 1em;
-    align-content: center;
   }
 }
