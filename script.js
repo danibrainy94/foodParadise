@@ -267,9 +267,9 @@ function flyToCart(itemElement, cartElement) {
         img.style.left = cartRect.left + 'px';
         img.style.top = cartRect.top + 'px';
         img.style.width = '30px';
-        img.style.height = '30px';
+        img.style.height = '5px';
         img.style.opacity = '0.6';
-    }, 10);
+    }, .1);
 
     img.addEventListener('transitionend', () => img.remove());
 
@@ -291,20 +291,3 @@ productBox.addEventListener('click', e => {
 });
 
 
-
-
-
-// Add CSS for shake animation (add this to your CSS file)
-/*
-.shake {
-    animation: shake 0.5s;
-}
-@keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-5px); }
-    40% { transform: translateX(5px); }
-    60% { transform: translateX(-5px); }
-    80% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-}
-*/
