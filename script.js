@@ -291,3 +291,10 @@ productBox.addEventListener('click', e => {
 });
 
 
+// selecting through chef cards
+let chefBtnRight = document.querySelector(".bx-chevron-right-circle");
+let chefBtnLeft = document.querySelector(".bx-chevron-left-circle");
+
+chefBtnRight.addEventListener("click", () => {
+  
+})

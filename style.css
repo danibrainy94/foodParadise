@@ -641,27 +641,33 @@ li {
 }
 
 .chef-area-container {
-  margin: 0  1em;
+  /* margin: 0  1em; */
 }
 
 .chef-area-wrapper {
-  position: relative;
+  
   /* width: 100vw; */
-  padding: 1em;
-  /* height: 40em; */
+  padding: 2em 0;
   display: flex;
   justify-content: center;
+
+  button {
+    all: unset;
+    font-size: 3em;
+  }
 }
 
+.chef-element-wrapper {
+  position: relative;
+}
 .chef-element {
   display: flex;
   flex-direction: column;
-  width: 15em;
+  width: 20em;
+  display: absolute;
   /* height: 29em; */
-  overflow: hidden;
   border-radius: 24px;
   background-color: #E4DFDA;
-  padding: .5em;
   box-shadow: 2px 4px 8px gray;
   transition: width .3s ease, margin-bottom .3s ease;
   /* margin: 1em 0; */
@@ -670,7 +676,7 @@ li {
     height: 20em;
     max-width: 100%;
     object-fit: cover;
-    border-radius: 14px;
+
   }
 }
 
@@ -680,28 +686,6 @@ li {
   overflow: hidden;
   padding: .5em;
   transition: height .6s ease;
-}
-
-.chef-area-wrapper {
-  height: 35em;
-  display: flex;
-  align-items: flex-start;
-}
-
-.chef-element:not(:hover) {
-  align-self: flex-start;
-}
-
-.chef-element:hover  {
-  width: 35em;
-  margin-bottom: 4em;
-  overflow: visible;
-  box-shadow: 8px 12px 12px grey;
-  z-index: 1;
-}
-
-.chef-element:hover .chef-info {
-  height: 8em;
 }
 
 .chef-area-title {
