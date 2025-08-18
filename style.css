@@ -101,6 +101,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   /* margin: 0 1em; */
   transition: all .3s ease-in-out;
   display: none;
@@ -114,11 +115,21 @@ li {
 .nav-links a {
   text-decoration: none;
   color: rgb(87, 82, 81);
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+
 }
 
 .nav-links {
   font-size: 1.2em;
   padding: 0.5em 0;
+}
+
+.nav-icons {
+  font-size: 1.3em;
+  padding: 0 .2em;
+  color: tomato;
 }
 
 /* styling the slide show */
@@ -716,7 +727,7 @@ li {
 }
 
 .extra-info {
-  height: 2em;
+  /* height: 2em; */
   display: block;
   display: flex;
   justify-content: flex-start;
@@ -728,7 +739,7 @@ li {
   }
   
   i {
-    font-size: 1.2em;
+    font-size: .9em;
     color: tomato;
     padding: 0 .2em;
   }

@@ -305,7 +305,7 @@ const chefData = [
     img: './food-img/chef3.jpg',
     chefname: 'Marie Dubois',
     description:
-      'Specializes in French and contemporary fusion cuisine, conversant with classical techniques prefers using seasonal, locally sourced ingredients to create refined, flavor-rich dishes.',
+      'Specializes in French and contemporary fusion cuisine using seasonal, locally sourced ingredients to create refined, flavor-rich dishes.',
     nationality: 'French',
     speed: 'optimum',
     price: 'Moderate'
