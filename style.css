@@ -682,7 +682,7 @@ li {
 }
 
 .chef-element-right {
-  animation: moveInRight 1s ease forwards;
+  animation: moveInRight .3s ease forwards;
   transition: all .3s;
 }
 @keyframes moveInRight {
