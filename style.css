@@ -690,7 +690,7 @@ li {
   100% {transform: rotateX(0);opacity: 1;}
 }
 .chef-element-left {
-  animation: moveInLeft 1s ease forwards;
+  animation: moveInLeft .3s ease forwards;
   transition: all .3s;
 }
 @keyframes moveInLeft {
