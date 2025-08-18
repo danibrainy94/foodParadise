@@ -6,6 +6,7 @@
 body {
   background-color: #faf9f6;
   color: rgb(71, 67, 67);
+  font-family: "Montserrat", sans-serif;
   
 }
 
@@ -715,15 +716,21 @@ li {
 }
 
 .extra-info {
+  height: 2em;
   display: block;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1em;
   
+  p {
+    font-size: .9em;
+  }
+  
   i {
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: tomato;
+    padding: 0 .2em;
   }
 }
 
