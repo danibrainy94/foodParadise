@@ -654,12 +654,13 @@ li {
   button {
     all: unset;
     font-size: 3em;
+    color: tomato;
   }
+
 }
 
-.chef-element-wrapper {
-  position: relative;
-}
+
+
 .chef-element {
   display: flex;
   flex-direction: column;
@@ -669,29 +670,67 @@ li {
   border-radius: 24px;
   background-color: #E4DFDA;
   box-shadow: 2px 4px 8px gray;
-  transition: width .3s ease, margin-bottom .3s ease;
-  /* margin: 1em 0; */
+  transition: all .3s;
 
   img {
     height: 20em;
     max-width: 100%;
     object-fit: cover;
+    border-radius: 14px 14px 0 0;
 
   }
 }
 
-.chef-info {
-  height: 1.7em;
-  width: 15em;
-  overflow: hidden;
-  padding: .5em;
-  transition: height .6s ease;
+.chef-element-right {
+  animation: moveInRight 1s ease forwards;
+  transition: all .3s;
+}
+@keyframes moveInRight {
+  0% {transform: rotateX(120deg);opacity: 0.3;}
+  100% {transform: rotateX(0);opacity: 1;}
+}
+.chef-element-left {
+  animation: moveInLeft 1s ease forwards;
+  transition: all .3s;
+}
+@keyframes moveInLeft {
+  0% {transform: rotateX(-120deg); opacity: 0.3;}
+  100% {transform: rotateX(0) scale(1); opacity: 1;}
+}
+
+.chef-profile {
+  padding: 1em;
+}
+
+#chef-name::after {
+  margin: .2em 0;
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: tomato;
+}
+
+#chef-description {
+  margin: 1em 0;
+}
+
+.extra-info {
+  display: block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  
+  i {
+    font-size: 1.3em;
+    color: tomato;
+  }
 }
 
 .chef-area-title {
   text-align: center;
   font-size: 2.5em;
-  margin: 1em 0;
+  /* margin: 1em 0; */
   
 }
 

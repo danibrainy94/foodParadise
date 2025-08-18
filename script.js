@@ -236,65 +236,169 @@ clearCartBtn.addEventListener('click', () => {
   cartDisplayToPage()
 })
 
-
 /* setting up some cool cart animtions */
 
 // adding a shake effect to the cart icon whenever the add to cart button is clicked
-function shakeCartIcon() {
-    if (!cartIcon) return;
-    cartIcon.classList.add('shake');
-    setTimeout(() => {
-        cartIcon.classList.remove('shake');
-    }, 500); // duration matches the shake animation
+function shakeCartIcon () {
+  if (!cartIcon) return
+  cartIcon.classList.add('shake')
+  setTimeout(() => {
+    cartIcon.classList.remove('shake')
+  }, 500) // duration matches the shake animation
 }
 
 // Add shake effect when flyToCart is executed
-function flyToCart(itemElement, cartElement) {
-    const img = itemElement.querySelector('.product-img').cloneNode();
-    const itemRect = itemElement.getBoundingClientRect();
-    const cartRect = cartElement.getBoundingClientRect();
+function flyToCart (itemElement, cartElement) {
+  const img = itemElement.querySelector('.product-img').cloneNode()
+  const itemRect = itemElement.getBoundingClientRect()
+  const cartRect = cartElement.getBoundingClientRect()
 
-    img.style.position = 'fixed';
-    img.style.left = itemRect.left + 'px';
-    img.style.top = itemRect.top + 'px';
-    img.style.width = itemRect.width + 'px';
-    img.style.height = itemRect.height + 'px';
-    img.style.transition = 'all 0.3s cubic-bezier(.55,-0.04,.91,.94)';
-    img.style.zIndex = 1000;
-    document.body.appendChild(img);
+  img.style.position = 'fixed'
+  img.style.left = itemRect.left + 'px'
+  img.style.top = itemRect.top + 'px'
+  img.style.width = itemRect.width + 'px'
+  img.style.height = itemRect.height + 'px'
+  img.style.transition = 'all 0.3s cubic-bezier(.55,-0.04,.91,.94)'
+  img.style.zIndex = 1000
+  document.body.appendChild(img)
 
-    setTimeout(() => {
-        img.style.left = cartRect.left + 'px';
-        img.style.top = cartRect.top + 'px';
-        img.style.width = '30px';
-        img.style.height = '5px';
-        img.style.opacity = '0.6';
-    }, 10);
+  setTimeout(() => {
+    img.style.left = cartRect.left + 'px'
+    img.style.top = cartRect.top + 'px'
+    img.style.width = '30px'
+    img.style.height = '5px'
+    img.style.opacity = '0.6'
+  }, 10)
 
-    img.addEventListener('transitionend', () => img.remove());
+  img.addEventListener('transitionend', () => img.remove())
 
-    shakeCartIcon();
+  shakeCartIcon()
 }
 
-// selecting the cart icon element 
-const cartIcon = document.querySelector('.bx-cart');
+// selecting the cart icon element
+const cartIcon = document.querySelector('.bx-cart')
 
 // Add fly-to-cart animation when cart button is clicked
 productBox.addEventListener('click', e => {
-    let btn = e.target.closest('.cart-btn');
-    if (btn && cartIcon) {
-        let productDiv = btn.closest('.box');
-        if (productDiv) {
-            flyToCart(productDiv, cartIcon);
-        }
+  let btn = e.target.closest('.cart-btn')
+  if (btn && cartIcon) {
+    let productDiv = btn.closest('.box')
+    if (productDiv) {
+      flyToCart(productDiv, cartIcon)
     }
-});
+  }
+})
 
+/* code to change the contents of the chef cards at the click of a button */
+
+const chefData = [
+  {
+    img: './food-img/chef1.png',
+    chefname: 'Luca Moretti',
+    description:
+      'Mastery in modern Mediterranean and Italian cuisine, blending tradition with innovation using seasonal, high-quality ingredients',
+    nationality: 'Italian',
+    speed: 'fast',
+    price: 'Expensive'
+  },
+  {
+    img: './food-img/chef3.jpg',
+    chefname: 'Marie Dubois',
+    description:
+      'Specializes in French and contemporary fusion cuisine, conversant with classical techniques prefers using seasonal, locally sourced ingredients to create refined, flavor-rich dishes.',
+    nationality: 'French',
+    speed: 'optimum',
+    price: 'Moderate'
+  },
+  {
+    img: './food-img/chef2.png',
+    chefname: 'Carlos Mendez',
+    description:
+      'Carlos Mendez specializes in blending bold Latin flavors with modern culinary techniques. Carlos brings a global perspective to authentic, ingredient-driven cuisine.',
+    nationality: 'Mexican',
+    speed: 'fast',
+    price: 'Affordable'
+  }
+]
+
+let chefElement = document.querySelectorAll('.chef-element')
+let chefImage = document.getElementById('chef-img')
+let chefName = document.getElementById('chef-name')
+let chefDescription = document.getElementById('chef-description')
+let chefNationality = document.getElementsByClassName('extra-info')[0]
+let chefSpeed = document.getElementsByClassName('extra-info')[1]
+let chefPrice = document.getElementsByClassName('extra-info')[2]
+let extraInfo = document.querySelector('.extra-info')
 
 // selecting through chef cards
-let chefBtnRight = document.querySelector(".bx-chevron-right-circle");
-let chefBtnLeft = document.querySelector(".bx-chevron-left-circle");
+let chefBtnRight = document.querySelector('.bx-chevron-right-circle')
+let chefBtnLeft = document.querySelector('.bx-chevron-left-circle')
 
-chefBtnRight.addEventListener("click", () => {
+let cardIndex = 0
+
+// function to facilitate the display of elements for the chef card
+const displayChefCard = () => {
   
+  chefImage.src = chefData[cardIndex].img
+  chefName.textContent = chefData[cardIndex].chefname
+  chefDescription.textContent = chefData[cardIndex].description
+  extraInfo.innerHTML = ` 
+  <p><i class='bx  bx-building-house'></i>${chefData[cardIndex].nationality}</p>
+  <p><i class='bx  bx-timer'></i>${chefData[cardIndex].speed}</p>
+  <p><i class='bx  bx-currency-notes'></i>${chefData[cardIndex].price}</p> `;
+  
+}
+
+// function to disable buttons when at the last element in the list
+const updateButtonState = () => {
+  chefBtnLeft.disabled = cardIndex === 0
+  chefBtnRight.disabled = cardIndex === chefData.length - 1
+}
+
+// load first element once the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  displayChefCard()
+  updateButtonState()
+})
+
+// display next chef element once the right button is clicked
+chefBtnRight.addEventListener('click', () => {
+  if (cardIndex < chefData.length - 1) {
+    cardIndex++
+    displayChefCard()
+    updateButtonState()
+  }
+
+  chefElement.forEach(item => {
+    item.classList.add('chef-element-right')
+
+    item.addEventListener(
+      'animationend',
+      () => {
+        item.classList.remove('chef-element-right')
+      },
+      { once: true }
+    )
+  })
+})
+
+// display previous chef element once the left button is clicked
+chefBtnLeft.addEventListener('click', () => {
+  if (cardIndex > 0) {
+    cardIndex--
+    displayChefCard()
+    updateButtonState()
+  }
+
+  chefElement.forEach(item => {
+    item.classList.add('chef-element-left')
+
+    item.addEventListener(
+      'animationend',
+      () => {
+        item.classList.remove('chef-element-left')
+      },
+      { once: true }
+    )
+  })
 })
