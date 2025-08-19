@@ -23,7 +23,7 @@
         <div class="hamburger-container">
             <i id="menu-btn" class='bx  bx-menu-left nav-mobile'></i>
             <i id="cancel-btn" class='bx  bx-x nav-mobile'></i>
-            <h1>foodParadise</h1>
+            <h1 class="logo-text">foodParadise</h1>
             <span class="cart-container">
                 <i class='bx  bx-cart'></i>
                 <span id="cart-count">0</span>
@@ -31,35 +31,65 @@
         </div>
 
         <ul id="links-container" class="hidden">
-            <li class="nav-links"><a href="top"> <i class='nav-icons bx  bx-home'  ></i> Home</a></li>
-            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-book-library'  ></i> About</a></li>
-            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-bowl-bubbles'  ></i> Cuisines</a></li>
-            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-truck'  ></i> Services</a></li>
-            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-address-book'  ></i> Contact</a></li>
+            <li class="nav-links"><a href="top"> <i class='nav-icons bx  bx-home'></i> Home</a></li>
+            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-book-library'></i> About</a></li>
+            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-bowl-bubbles'></i> Cuisines</a></li>
+            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-truck'></i> Services</a></li>
+            <li class="nav-links"><a href="#"> <i class='nav-icons bx  bx-address-book'></i> Contact</a></li>
 
             <!-- <span class="socials">
                 <p>fb</p>
                 <p>fb</p>
                 <p>fb</p>
             </span> -->
+        </ul>
     </nav>
 
     <section class="slideshow-container">
         <div class="slideshow-wrapper">
-            <img src="./food-img/foodiesfeed.com_colorful-veggie-bowl-with-eggs-and-fresh-corn.png" alt=""
-                class="slide-images">
-            <img src="./food-img/foodiesfeed.com_colorful-bowl-of-deliciousness-with-fried-egg.png" alt=""
-                class="slide-images">
-            <img src="./food-img/foodiesfeed.com_freshly-prepared-beef-steak-with-vegetables.jpg" alt=""
-                class="slide-images">
-            <img src="./food-img/grilled-salmon-bowl-with-quinoa-and-colorful-veggies.png" alt="" class="slide-images">
-            <img src="./food-img/grilled-salmon-bowl-with-quinoa-and-colorful-veggies.png" alt="" class="slide-images">
+            <img src="./food-img/slideImage (2).png" alt="" class="slide-images">
+            <img src="./food-img/slideImage (1).png" alt="" class="slide-images">
+            <img src="./food-img/slideImage (3).png" alt="" class="slide-images">
+            <img src="./food-img/slideImage (4).jpg" alt="" class="slide-images">
         </div>
 
-        <span class="slide-description">
+
+
+        
+
+            
+
+        <!-- <picture class="slide-images">
+                <source media="(min-width: 1024px )" srcset="./food-img/slideImage1L.png" sizes="">
+                <source media="(min-width: 768px )" srcset="./food-img/slideImage1.png" sizes="">
+                <img src="./food-img/slideImage1.png" alt="" loading="lazy">
+            </picture>
+            <picture class="slide-images">
+                <source media="(min-width: 1024px )" srcset="./food-img/slideImage2L.png" sizes="">
+                <source media="(min-width: 768px )" srcset="./food-img/slideImage2" sizes="">
+                <img src="./food-img/slideImage2.png" alt="" loading="lazy">
+            </picture>
+            <picture class="slide-images">
+                <source media="(min-width: 1024px )" srcset="./food-img/slideImage3L.jpg" sizes="">
+                <source media="(min-width: 768px )" srcset="./food-img/slideImage3" sizes="">
+                <img src="./food-img/slideImage3.jpg" alt="" loading="lazy">
+            </picture>
+            <picture class="slide-images">
+                <source media="(min-width: 1024px )" srcset="./food-img/slideImage5L.png" sizes="">
+                <source media="(min-width: 768px )" srcset="./food-img/slideImage5" sizes="">
+                <img src="./food-img/slideImage5.png" alt="" loading="lazy">
+            </picture> -->
+
+        <!-- <span class="slide-description">
             <h1>Welcome to foodParadise, <br>
                 the best is what we offer</h1>
-        </span>
+        </span> -->
+
+        <button class="slide-btn prev" onclick="changeSlide(-1)" aria-label="Previous Slide">&#10094;</button>
+        <button class="slide-btn next" onclick="changeSlide(1)" aria-label="Next Slide">&#10095;</button>
+
+        <!-- Dots Indicator -->
+        <div class="dots-container" id="dots-container"></div>
     </section>
 
     <section id="cart-items-container" class="cart-items-container">

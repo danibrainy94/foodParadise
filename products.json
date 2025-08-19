@@ -9,6 +9,14 @@
     },
     {
         "id": 2,
+        "productName": "Fried noodles with chicken & egg",
+        "img": "nigfood5.jpeg",
+        "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
+        "price": "$44",
+        "category": "nigerian"
+    },
+    {
+        "id": 3,
         "productName": "coffe cocoa $ cream shake",
         "img": "shake6.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
@@ -16,15 +24,23 @@
         "category": "shakes"
     },
     {
-        "id": 3,
+        "id": 4,
         "productName": "Spiced roasted Beef",
         "img": "food5.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
-        "price": "$30",
+        "price": "$60",
         "category": "berbecue"
     },
     {
-        "id": 4,
+        "id": 5,
+        "productName": "Assorted Meat pepper soup",
+        "img": "nigfood4.jpeg",
+        "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
+        "price": "$50",
+        "category": "nigerian"
+    },
+    {
+        "id": 6,
         "productName": "Pork ribs & Vegetable",
         "img": "food6.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
@@ -32,7 +48,7 @@
         "category": "berbecue"
     },
     {
-        "id": 5,
+        "id": 7,
         "productName": "Pork Belly with Caramel sauce",
         "img": "food9.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
@@ -40,7 +56,7 @@
         "category": "continental"
     },
     {
-        "id": 6,
+        "id": 8,
         "productName": "Grilled Salmon with quinoa & vegetables",
         "img": "food11.png",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
@@ -48,7 +64,7 @@
         "category": "continental"
     },
     {
-        "id": 7,
+        "id": 9,
         "productName": "Banana-oatmeal-with-blueberries & apple",
         "img": "food12.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
@@ -56,7 +72,7 @@
         "category": "continental"
     },
     {
-        "id": 8,
+        "id": 10,
         "productName": "Veggie bowl with eggs & fresh corn",
         "img": "food13.png",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
@@ -64,12 +80,20 @@
         "category": "nigerian"
     },
     {
-        "id": 9,
+        "id": 11,
         "productName": "smoothie with fresh berries",
         "img": "smoothie1.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
         "price": "$25",
         "category": "shakes"
+    },
+    {
+        "id": 12,
+        "productName": "Fried rice & Chicken",
+        "img": "nigfood2.jpeg",
+        "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
+        "price": "$54",
+        "category": "nigerian"
     }
 ]
 
