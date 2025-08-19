@@ -946,25 +946,15 @@ a:hover {
   }
 
 .slideshow-container {
-        max-width: 800px;
-        margin: 30px auto;
+        max-width: 60em;
+        margin: 10px auto;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
       }
 
       .slide-images {
-        height: 400px;
+        height: 40em;
       }
-
-      .slide-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 18px;
-        opacity: 0.9;
-      }
-
-      .prev { left: 15px; }
-      .next { right: 15px; }
 
   .box {
     width: 18em;
@@ -1097,11 +1087,11 @@ a:hover {
   }
 
   .slideshow-container {
-        max-width: 1000px;
+        max-width: 75em;
       }
 
       .slide-images {
-        height: 500px;
+        height: 30em;
       }
 
       .slide-btn {
