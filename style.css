@@ -856,13 +856,13 @@ li {
     display: none;
   }
 
-a {
+.nav-links {
   transition: all 0.4s;
   border-radius: 4px;
   padding: 0.4em 0.5em;
 }
 
-a:hover {
+.nav-links:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-bottom: 4px solid tomato;
   border-top: 4px solid tomato;
@@ -886,6 +886,8 @@ a:hover {
   nav {
     position: unset;
     display: flex;
+    height: 5em;
+
     justify-content: center;
     /* padding: 0 .5em; */
     background-color: white;
