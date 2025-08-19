@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #faf9f6;
   color: rgb(71, 67, 67);
@@ -157,38 +162,6 @@ li {
       flex-shrink: 0;
     }
 
-    /* Navigation buttons (small and touch-friendly) */
-    .slide-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      opacity: 0.8;
-    }
-
-    .slide-btn:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
 
     /* Dots indicator - centered below */
     .dots-container {
@@ -810,17 +783,6 @@ li {
 } */
 
 /* hover effect for various components */
-a {
-  transition: all 0.4s;
-  border-radius: 4px;
-  padding: 0.4em 0.5em;
-}
-
-a:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid rgb(215, 108, 90);
-  background: rgba(255, 255, 255, 0.533);
-}
 
 
   /* Footer Styles */
@@ -893,6 +855,21 @@ a:hover {
   #cancel-btn {
     display: none;
   }
+
+a {
+  transition: all 0.4s;
+  border-radius: 4px;
+  padding: 0.4em 0.5em;
+}
+
+a:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid tomato;
+  border-top: 4px solid tomato;
+  padding: 0.6em 0.5em;
+  /* background: rgba(255, 255, 255, 0.533); */
+}
+
 
   .logo-text {
     margin: 0 -3em;
@@ -1047,6 +1024,21 @@ a:hover {
     border-radius: 14px 0 50% 14px;
 
   }
+  
+  
+}
+
+#chef-name {
+  font-size: 3em;
+}
+
+#chef-description {
+  font-size: 1.5em;
+}
+
+.extra-info {
+  font-size: 1.5em;
+}
 
 
     footer {
@@ -1057,7 +1049,7 @@ a:hover {
         width: auto;
         text-align: left;
       }
-    }
+
 
     .footer-bottom {
       width: 100%;
@@ -1069,6 +1061,7 @@ a:hover {
       color: rgba(255, 255, 255, 0.8);
     }
   }
+
 
 
 
@@ -1087,7 +1080,7 @@ a:hover {
   }
 
   .slideshow-container {
-        max-width: 75em;
+        max-width: 85em;
       }
 
       .slide-images {

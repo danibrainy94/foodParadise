@@ -77,19 +77,6 @@ crossBtn.addEventListener('click', showMenu)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // initializing and getting product data from the json app
 let productList = []
 

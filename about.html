@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Food Paradise</title>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: #fff8f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+            opacity: 1;
+            transform: translateY(0);
+            }
+        }
+        h1 {
+            color: #e67e22;
+            margin-bottom: 16px;
+        }
+        h2 {
+            color: #d35400;
+            margin-top: 32px;
+        }
+        p {
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .team {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .member {
+            flex: 1;
+            background: #f9e5d7;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .member img {
+            width: 80px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+        #home-btn {
+            all: unset;
+            display: block;
+            padding: .5em;
+            background-color: tomato;
+            font-size: 1.8em;
+            border-radius: 24px;
+            box-shadow: 4px 4px 8px grey;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            
+        }
+        @media (max-width: 700px) {
+            .container { padding: 16px; }
+            .team { flex-direction: column; }
+        }
+    </style>
+
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>About Food Paradise</h1>
+        <p>
+            Welcome to <strong>Food Paradise</strong> – your ultimate destination for discovering, sharing, and celebrating the world of delicious cuisine! Whether you're a passionate home cook, a food enthusiast, or simply someone who loves exploring new flavors, Food Paradise is here to inspire and guide you on your culinary journey.
+        </p>
+        <h2>Our Mission</h2>
+        <p>
+            At Food Paradise, our mission is to bring people together through the joy of food. We believe that every meal tells a story, and every recipe is an opportunity to create lasting memories. Our platform is dedicated to providing detailed recipes, cooking tips, and food guides that cater to all skill levels.
+        </p>
+        <h2>What We Offer</h2>
+        <ul>
+            <li><strong>Curated Recipes:</strong> Explore a wide variety of recipes from different cuisines, each carefully tested and explained step-by-step.</li>
+            <li><strong>Cooking Tutorials:</strong> Learn new techniques and master the art of cooking with our easy-to-follow tutorials.</li>
+            <li><strong>Food Stories:</strong> Dive into articles and stories that celebrate food culture, traditions, and the people behind the dishes.</li>
+            <li><strong>Community:</strong> Connect with fellow food lovers, share your creations, and exchange tips in our vibrant community.</li>
+        </ul>
+        <h2>Meet the Team</h2>
+        <div class="team">
+            <div class="member">
+                <img src="./food-img/chef1.png" alt="Founder">
+                <h3>Alex Johnson</h3>
+                <p>Founder & Head Chef</p>
+                <p>Alex brings years of culinary experience and a passion for sharing food knowledge with everyone.</p>
+            </div>
+            <div class="member">
+                <img src="./food-img/chef2.png" alt="Content Creator">
+                <h3>John Lee</h3>
+                <p>Content Creator</p>
+                <p>John crafts engaging recipes and food stories, making cooking accessible and fun for all.</p>
+            </div>
+        </div>
+        <h2>Join Us!</h2>
+        <p>
+            We invite you to explore Food Paradise, try our recipes, and become part of our growing community. Whether you're here to learn, share, or simply enjoy great food, there's a place for you at our table.
+        </p>
+        <p>
+            <em>Thank you for visiting Food Paradise – where every bite is a celebration!</em>
+        </p>
+
+        <button id="home-btn"> <a href="index.html"> Home</a> </button>
+    </div>
+</body>
+</html>
