@@ -135,7 +135,7 @@ li {
 
 .slideshow-container {
       width: 100%;
-      margin: 20px auto;
+      margin: 0 auto;
       position: relative;
       overflow: hidden;
       border-radius: 12px;
@@ -560,6 +560,12 @@ li {
 
 }
 
+.product-btn:active {
+  background-color: tomato;
+  color: white;
+
+}
+
 .price {
   font-size: 2em;
   font-weight: 600;
@@ -704,8 +710,8 @@ li {
 
   button {
     all: unset;
-    font-size: 3em;
-    margin: .3em;
+    font-size: 2.5em;
+    margin: .2em;
     color: tomato;
   }
 
