@@ -20,6 +20,64 @@ const showMenu = () => {
 menuBtn.addEventListener('click', showCross)
 crossBtn.addEventListener('click', showMenu)
 
+
+
+    // Slideshow functionality
+    const slides = document.querySelectorAll('.slide-images');
+    const dotsContainer = document.getElementById('dots-container');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    
+
+    // Update slide position
+    function updateSlide() {
+      document.querySelector('.slideshow-wrapper').style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    // Change slide
+    function changeSlide(step) {
+      currentIndex = (currentIndex + step + slides.length) % slides.length;
+      updateSlide();
+      resetAutoPlay();
+    }
+
+    // Go to specific slide
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlide();
+      resetAutoPlay();
+    }
+
+    // Auto-play
+    let autoPlayInterval;
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        changeSlide(1);
+      }, 5000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    // Start auto-play
+    startAutoPlay();
+
+
+
 // initializing and getting product data from the json app
 let productList = []
 
