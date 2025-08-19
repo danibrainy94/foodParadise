@@ -151,7 +151,8 @@ li {
 
     .slide-images {
       width: 100%;
-      height: 250px; /* Compact height for mobile */
+      height: 25em;
+     /* Compact height for mobile */
       object-fit: cover;
       flex-shrink: 0;
     }

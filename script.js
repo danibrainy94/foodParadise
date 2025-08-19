@@ -25,7 +25,6 @@ crossBtn.addEventListener('click', showMenu)
     // Slideshow functionality
     const slides = document.querySelectorAll('.slide-images');
     const dotsContainer = document.getElementById('dots-container');
-    const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
 
     // Create dots
@@ -37,7 +36,7 @@ crossBtn.addEventListener('click', showMenu)
       dotsContainer.appendChild(dot);
     });
 
-    
+    const dots = document.querySelectorAll('.dot');
 
     // Update slide position
     function updateSlide() {
@@ -75,6 +74,19 @@ crossBtn.addEventListener('click', showMenu)
 
     // Start auto-play
     startAutoPlay();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
