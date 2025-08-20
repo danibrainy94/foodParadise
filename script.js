@@ -12,7 +12,7 @@
       // Optional: Remove loader from DOM after animation completes
       setTimeout(() => {
         loader.style.display = 'none';
-      }, 500); // Match this to CSS transition duration
+      }, 1000); // Match this to CSS transition duration
     });
 
 let crossBtn = document.getElementById('cancel-btn')
