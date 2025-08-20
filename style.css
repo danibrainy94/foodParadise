@@ -402,8 +402,11 @@ li {
 
 .totals {
   display: flex;
-  font-size: 1.3em;
+  justify-content: center;
+  padding: .2em .4em;
+  flex-direction: column;
   font-weight: 500;
+  width: 100%;
 }
 
 /* styling the title header */
