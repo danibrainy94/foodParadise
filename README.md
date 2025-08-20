@@ -4,7 +4,7 @@ A clean, responsive e-commerce food website built with **vanilla JavaScript**, d
 
 ## 📌 Overview
 
-**foodparadise** is a server-side rendered e-commerce platform focused on food delivery and online ordering. It features a modern, visually engaging UI with smooth navigation, image sliders, and interactive components — all built without any front-end frameworks.
+**foodparadise** is a client-side rendered e-commerce platform focused on food delivery and online ordering. It features a modern, visually engaging UI with smooth navigation, image sliders, and interactive components — all built without any front-end frameworks.
 
 This project emphasizes **clean code**, **mobile-first design**, and **performance**, making it ideal for learning or extending into a full-stack application.
 
