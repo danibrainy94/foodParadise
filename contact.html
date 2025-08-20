@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Food Paradise</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff7043;
+            --secondary: #fff3e0;
+            --accent: #ffa726;
+            --text: #333;
+            --bg: #fff;
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInBg 1.5s;
+        }
+        @keyframes fadeInBg {
+            from { background: #fff; }
+            to { background: var(--secondary); }
+        }
+        .contact-container {
+            background: var(--bg);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(255, 112, 67, 0.15);
+            padding: 2.5rem 2rem;
+            max-width: 420px;
+            width: 100%;
+            animation: slideUp 1s;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            animation: fadeIn 1.2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: var(--accent);
+            animation: fadeIn 1.5s;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            animation: fadeIn 1.8s;
+        }
+        label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+        input, textarea {
+            padding: 0.7rem;
+            border: 1.5px solid var(--accent);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--secondary);
+            transition: border-color 0.3s;
+            outline: none;
+            resize: none;
+        }
+        input:focus, textarea:focus {
+            border-color: var(--primary);
+        }
+        button {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255, 112, 67, 0.12);
+            transition: background 0.3s, transform 0.2s;
+            animation: pulseBtn 2s infinite;
+        }
+        @keyframes pulseBtn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        button:hover {
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+            transform: scale(1.07);
+        }
+        .social-links {
+            margin-top: 1.5rem;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.2s;
+        }
+        .social-links a:hover {
+            color: var(--accent);
+            transform: scale(1.2) rotate(-8deg);
+        }
+        @media (max-width: 500px) {
+            .contact-container {
+                padding: 1.2rem 0.5rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/7e5e5e5e5e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="contact-container">
+        <h2>Contact Food Paradise</h2>
+        <div class="contact-info">
+            We'd love to hear from you!<br>
+            Email: <a href="mailto:info@foodparadise.com" style="color:var(--primary);text-decoration:none;">info@foodparadise.com</a><br>
+            Phone: <a href="tel:+1234567890" style="color:var(--primary);text-decoration:none;">+1 234 567 890</a>
+        </div>
+        <form>
+            <div>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            <div>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Type your message"></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -131,7 +131,7 @@ const generateProducts = (product = productList) => {
 
             <div class="buttons-container">
                 <div class="buttons-wrapper">
-                    <p class="price">&#8358; ${prod.price.toLocaleString()}</p>
+                    <p class="price">&#8358;${prod.price.toLocaleString()}</p>
                     
                     <button class=" all-button product-btn cart-btn"><i class='bx  bx-cart-plus'></i> </button>
                 </div>
