@@ -1,3 +1,20 @@
+// Wait for all resources (images, scripts, etc.) to load
+    window.addEventListener('load', function () {
+      const loader = document.getElementById('loader');
+      const content = document.getElementById('page-container');
+
+      // Add fade-out class to loader
+      loader.classList.add('fade-out');
+
+      // Show content after loader starts fading
+      content.classList.add('loaded');
+
+      // Optional: Remove loader from DOM after animation completes
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500); // Match this to CSS transition duration
+    });
+
 let crossBtn = document.getElementById('cancel-btn')
 let menuBtn = document.getElementById('menu-btn')
 let navElements = document.getElementById('links-container')
