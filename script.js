@@ -131,7 +131,7 @@ const generateProducts = (product = productList) => {
 
             <div class="buttons-container">
                 <div class="buttons-wrapper">
-                    <p class="price">${prod.price.toLocaleString()}</p>
+                    <p class="price">&#8358; ${prod.price.toLocaleString()}</p>
                     
                     <button class=" all-button product-btn cart-btn"><i class='bx  bx-cart-plus'></i> </button>
                 </div>
@@ -261,7 +261,7 @@ const cartDisplayToPage = () => {
       cartItems.innerHTML = `
                 <img src="./food-img/${itemsInfo.img}" alt="cart-img" class="cart-img">
                 <p id="cart-name">${itemsInfo.productName}</p>
-                <p id="cart-price">${itemsInfo.price}</p>
+                <p id="cart-price">&#8358; ${itemsInfo.price}</p>
                 <div class="cart-buttons-container">
                     <button class="cart-btns-left"><i class='bx  bx-minus'  ></i> </button>
                     <span>${cart_obj.quantity}</span>

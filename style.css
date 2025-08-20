@@ -400,6 +400,12 @@ li {
   }
 }
 
+.totals {
+  display: flex;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
 /* styling the title header */
 .first-heading-wrapper {
   margin: 2em 0;
