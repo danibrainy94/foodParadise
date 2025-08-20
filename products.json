@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "productName": "coffe cocoa $ cream shake",
+        "productName": "coffe cocoa & cream shake",
         "img": "shake6.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
         "price": "$35",
@@ -65,7 +65,7 @@
     },
     {
         "id": 9,
-        "productName": "Banana-oatmeal-with-blueberries & apple",
+        "productName": "Oatmeal with blueberries & apple",
         "img": "food12.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
         "price": "$60",
@@ -81,7 +81,7 @@
     },
     {
         "id": 11,
-        "productName": "smoothie with fresh berries",
+        "productName": "Smoothie with fresh berries",
         "img": "smoothie1.jpg",
         "prodDescript": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse et explicabo quo.",
         "price": "$25",

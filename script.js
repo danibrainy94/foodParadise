@@ -260,7 +260,8 @@ const cartDisplayToPage = () => {
       cartItems.classList.add('cart-items')
       cartItems.innerHTML = `
                 <img src="./food-img/${itemsInfo.img}" alt="cart-img" class="cart-img">
-                <p>${itemsInfo.productName}</p>
+                <p id="cart-name">${itemsInfo.productName}</p>
+                <p id="cart-price">${itemsInfo.price}</p>
                 <div class="cart-buttons-container">
                     <button class="cart-btns-left"><i class='bx  bx-minus'  ></i> </button>
                     <span>${cart_obj.quantity}</span>
@@ -271,7 +272,24 @@ const cartDisplayToPage = () => {
     }
   })
 
-  // this handles the increment/decrement of the quantity when left/ right button is clicked.
+  let total = 0;
+cart.forEach(cart_obj => {
+  let presentPosition = productList.findIndex(
+    value => value.id == cart_obj.product_id
+  );
+  let itemsInfo = productList[presentPosition];
+  if (itemsInfo && !isNaN(itemsInfo.price)) {
+    total += Number(itemsInfo.price) * cart_obj.quantity;
+  }
+});
+
+let totalPrice = document.getElementById("total-price");
+if (totalPrice) {
+  totalPrice.textContent = Number(total).toLocaleString();
+}
+
+let totalItems = document.getElementById("total-items");
+// this handles the increment/decrement of the quantity when left/ right button is clicked.
   // it was moved here so that the event listeners trigger continuously on request
   const cartItems = cartItemsWrapper.querySelectorAll('.cart-items')
   cartItems.forEach((item, idx) => {
@@ -283,7 +301,8 @@ const cartDisplayToPage = () => {
         cart[idx].quantity--
         cartCounter.textContent--
       } else {
-        cart.splice(idx, 1)
+          cartCounter.textContent -= cart[idx].quantity;
+          cart.splice(idx, 1)
       }
       cartDisplayToPage()
     })
@@ -293,6 +312,7 @@ const cartDisplayToPage = () => {
       cartCounter.textContent++
       cartDisplayToPage()
     })
+    totalItems.textContent = cartCounter.textContent;
   })
 }
 
