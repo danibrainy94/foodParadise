@@ -35,21 +35,22 @@ body {
 
 /* Spinner Animation */
 .spinner {
-  width: 5.em;
-  height: 5.em;
+  width: 5.5em;
+  height: 5.5em;
   border: 6px solid #f0f0f0;
   border-top: 6px solid #b05c3c; /* Accent color */
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
-#page-container {
+/* #page-container {
   opacity: 0;
-  transition: opacity 1s ease-in;
-}
+  transition: opacity 0.6s ease-in;
+} */
 
 #page-container.loaded {
       opacity: 1;
+      overflow: visible;
     }
 
 
