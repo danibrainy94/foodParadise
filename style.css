@@ -353,7 +353,7 @@ li {
 
   button {
     background-color: #9ed5f2;
-    width: 6.5em;
+    width: 6em;
     border: none;
     font-size: 1.2em;
     padding: 0.5em;
@@ -551,6 +551,7 @@ li {
 .box-title {
   color: black;
   margin: 0.5em 0;
+  height: 2em;
   /* padding: .5em 0; */
   /* height: 3em; */
 }
@@ -588,8 +589,7 @@ li {
   justify-content: space-between;
 }
 
-/* styling the buttons */
-.product-btn {
+.all-button {
   width: 70px;
   border: none;
   display: inline-block;
@@ -597,6 +597,10 @@ li {
   font-size: 1em;
   border-radius: 14px;
   box-shadow: 2px 2px 8px #cfcbcb;
+}
+
+/* styling the buttons */
+.product-btn {
   transition: all 0.3s ease-in-out;
 }
 
@@ -606,7 +610,7 @@ li {
   box-shadow: 2px 4px 8px #cfcbcb;
 }
 
-.product-btn:active {
+.product-btn:active, .product-btn:focus {
   background-color: tomato;
   color: white;
 }

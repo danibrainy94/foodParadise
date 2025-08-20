@@ -1,3 +1,5 @@
+// setting up the page preloader to fade out after animation duration//
+
 // Wait for all resources (images, scripts, etc.) to load
     window.addEventListener('load', function () {
       const loader = document.getElementById('loader');
@@ -131,7 +133,7 @@ const generateProducts = (product = productList) => {
                 <div class="buttons-wrapper">
                     <p class="price">${prod.price.toLocaleString()}</p>
                     
-                    <button class="product-btn cart-btn"><i class='bx  bx-cart-plus'></i> </button>
+                    <button class=" all-button product-btn cart-btn"><i class='bx  bx-cart-plus'></i> </button>
                 </div>
                 <i class='bx  bx-share'></i>
             </div>
