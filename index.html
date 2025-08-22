@@ -75,22 +75,32 @@
     </section>
 
     <section id="cart-items-container" class="cart-items-container">
-        <div id="cart-items-wrapper"></div>
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <button class="close-btn" id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items-wrapper">
+            <!-- Sample cart items - these would be dynamically generated -->
+            
+        </div>
 
-        <div>
-            <!-- total price and total number of items -->
-        <div>
-            <span class="totals">Total price =  &#8358;<p id="total-price"> </p></span>
-            <span class="totals">total items = <p id="total-items"> 0</p></span>
-        </div>
-        <div>
-            <!-- <button class="checkout all-button">Ckeckout</button> -->
-        </div>
-        <!-- <button class="cart-btn checkout-btn">Checkout</button> -->
-        <div class="cart-control-container">
-            <button class="cart-btn-clear">Clear </button>
-            <button class="cart-btn-close">Close cart</button>
-        </div>
+        <!-- Total price and total number of items -->
+        <div class="cart-summary">
+            <div class="totals-container">
+                <div class="totals">
+                    <span>Total Price</span>
+                    <p id="total-price"></p>
+                </div>
+                <div class="totals">
+                    <span>Total Items</span>
+                    <p id="total-items"></p>
+                </div>
+            </div>
+            
+            <div class="cart-actions">
+                <button class="clear-cart" id="clear-cart">Clear Cart</button>
+                <button class="checkout">Checkout</button>
+            </div>
         </div>
     </section>
 

@@ -1,21 +1,21 @@
 // setting up the page preloader to fade out after animation duration//
 
 // Wait for all resources (images, scripts, etc.) to load
-    window.addEventListener('load', function () {
-      const loader = document.getElementById('loader');
-      const content = document.getElementById('page-container');
+window.addEventListener('load', function () {
+  const loader = document.getElementById('loader')
+  const content = document.getElementById('page-container')
 
-      // Add fade-out class to loader
-      loader.classList.add('fade-out');
+  // Add fade-out class to loader
+  loader.classList.add('fade-out')
 
-      // Show content after loader starts fading
-      content.classList.add('loaded');
+  // Show content after loader starts fading
+  content.classList.add('loaded')
 
-      // Optional: Remove loader from DOM after animation completes
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 1000); // Match this to CSS transition duration
-    });
+  // Optional: Remove loader from DOM after animation completes
+  setTimeout(() => {
+    loader.style.display = 'none'
+  }, 1000) // Match this to CSS transition duration
+})
 
 let crossBtn = document.getElementById('cancel-btn')
 let menuBtn = document.getElementById('menu-btn')
@@ -39,62 +39,60 @@ const showMenu = () => {
 menuBtn.addEventListener('click', showCross)
 crossBtn.addEventListener('click', showMenu)
 
+// Slideshow functionality
+const slides = document.querySelectorAll('.slide-images')
+const dotsContainer = document.getElementById('dots-container')
+let currentIndex = 0
 
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('div')
+  dot.classList.add('dot')
+  if (i === 0) dot.classList.add('active')
+  dot.addEventListener('click', () => goToSlide(i))
+  dotsContainer.appendChild(dot)
+})
 
-    // Slideshow functionality
-    const slides = document.querySelectorAll('.slide-images');
-    const dotsContainer = document.getElementById('dots-container');
-    let currentIndex = 0;
+const dots = document.querySelectorAll('.dot')
 
-    // Create dots
-    slides.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(i));
-      dotsContainer.appendChild(dot);
-    });
+// Update slide position
+function updateSlide () {
+  document.querySelector('.slideshow-wrapper').style.transform = `translateX(-${
+    currentIndex * 100
+  }%)`
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex))
+}
 
-    const dots = document.querySelectorAll('.dot');
+// Change slide
+function changeSlide (step) {
+  currentIndex = (currentIndex + step + slides.length) % slides.length
+  updateSlide()
+  resetAutoPlay()
+}
 
-    // Update slide position
-    function updateSlide() {
-      document.querySelector('.slideshow-wrapper').style.transform = `translateX(-${currentIndex * 100}%)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-    }
+// Go to specific slide
+function goToSlide (index) {
+  currentIndex = index
+  updateSlide()
+  resetAutoPlay()
+}
 
-    // Change slide
-    function changeSlide(step) {
-      currentIndex = (currentIndex + step + slides.length) % slides.length;
-      updateSlide();
-      resetAutoPlay();
-    }
+// Auto-play
+let autoPlayInterval
 
-    // Go to specific slide
-    function goToSlide(index) {
-      currentIndex = index;
-      updateSlide();
-      resetAutoPlay();
-    }
+function startAutoPlay () {
+  autoPlayInterval = setInterval(() => {
+    changeSlide(1)
+  }, 5000)
+}
 
-    // Auto-play
-    let autoPlayInterval;
+function resetAutoPlay () {
+  clearInterval(autoPlayInterval)
+  startAutoPlay()
+}
 
-    function startAutoPlay() {
-      autoPlayInterval = setInterval(() => {
-        changeSlide(1);
-      }, 5000);
-    }
-
-    function resetAutoPlay() {
-      clearInterval(autoPlayInterval);
-      startAutoPlay();
-    }
-
-    // Start auto-play
-    startAutoPlay();
-
-
+// Start auto-play
+startAutoPlay()
 
 // initializing and getting product data from the json app
 let productList = []
@@ -190,19 +188,26 @@ productBox.addEventListener('click', e => {
 })
 
 // toggle-cart on and off
-let cartContainerBtn = document.getElementsByClassName('cart-container')[0]
-let cartItemsContainer = document.getElementById('cart-items-container')
-let body = document.getElementsByTagName('body')
+let body = document.getElementsByTagName('body');
+// let cartContainerBtn = document.getElementsByClassName('cart-container')[0]
+// let cartItemsContainer = document.getElementById('cart-items-container');
+let cartContainerBtn = document.querySelector('.cart-container');
+let cartItemsContainer = document.querySelector('#cart-items-container');
 
-const toggleCartContainer = () => {
-  cartItemsContainer.classList.toggle('cart-show')
-}
 
-// const removeCart = () => {
-//     cartItemsContainer.classList.remove("cart-show");
-// }
+// cartContainerBtn.addEventListener('click', () => {
+//   cartItemsContainer.classList.toggle('reveal');
+  
+// })
 
-cartContainerBtn.addEventListener('click', toggleCartContainer)
+            // Toggle cart visibility
+            cartContainerBtn.addEventListener('click', () => {
+                if (cartContainerBtn && cartItemsContainer) {
+                  cartItemsContainer.style.visibility = 'visible'
+                  cartItemsContainer.style.top = 'clamp(2rem, 4em + .5rem, 5em)';
+                  cartItemsContainer.style.opacity = '1';
+                }
+            });
 // body.addEventListener("click", removeCart);
 
 // scans through each product and selects the add to cart button
@@ -259,37 +264,41 @@ const cartDisplayToPage = () => {
       let cartItems = document.createElement('div')
       cartItems.classList.add('cart-items')
       cartItems.innerHTML = `
-                <img src="./food-img/${itemsInfo.img}" alt="cart-img" class="cart-img">
-                <p id="cart-name">${itemsInfo.productName}</p>
-                <p id="cart-price">&#8358; ${itemsInfo.price}</p>
-                <div class="cart-buttons-container">
-                    <button class="cart-btns-left"><i class='bx  bx-minus'  ></i> </button>
-                    <span>${cart_obj.quantity}</span>
-                    <button class="cart-btns-right"><i class='bx  bx-plus'  ></i> </button>
-                </div>
-            `
+      <div class="cart-item">
+        <img src="./food-img/${itemsInfo.img}" alt="cart-img" class="cart-img">
+        <div>
+          <p id="cart-name">${itemsInfo.productName}</p>
+          <p id="cart-price">&#8358; ${itemsInfo.price}</p>
+        </div>
+        <div class="cart-buttons-container">
+          <button class="cart-btns-left"><i class='bx bx-minus'></i></button>
+          <span>${cart_obj.quantity}</span>
+          <button class="cart-btns-right"><i class='bx bx-plus'></i></button>
+        </div>
+      </div>
+      `
       cartItemsWrapper.appendChild(cartItems)
     }
   })
 
-  let total = 0;
-cart.forEach(cart_obj => {
-  let presentPosition = productList.findIndex(
-    value => value.id == cart_obj.product_id
-  );
-  let itemsInfo = productList[presentPosition];
-  if (itemsInfo && !isNaN(itemsInfo.price)) {
-    total += Number(itemsInfo.price) * cart_obj.quantity;
+  let total = 0
+  cart.forEach(cart_obj => {
+    let presentPosition = productList.findIndex(
+      value => value.id == cart_obj.product_id
+    )
+    let itemsInfo = productList[presentPosition]
+    if (itemsInfo && !isNaN(itemsInfo.price)) {
+      total += Number(itemsInfo.price) * cart_obj.quantity
+    }
+  })
+
+  let totalPrice = document.getElementById('total-price')
+  if (totalPrice) {
+    totalPrice.textContent = Number(total).toLocaleString()
   }
-});
 
-let totalPrice = document.getElementById("total-price");
-if (totalPrice) {
-  totalPrice.textContent = Number(total).toLocaleString();
-}
-
-let totalItems = document.getElementById("total-items");
-// this handles the increment/decrement of the quantity when left/ right button is clicked.
+  let totalItems = document.getElementById('total-items');
+  // this handles the increment/decrement of the quantity when left/ right button is clicked.
   // it was moved here so that the event listeners trigger continuously on request
   const cartItems = cartItemsWrapper.querySelectorAll('.cart-items')
   cartItems.forEach((item, idx) => {
@@ -301,8 +310,8 @@ let totalItems = document.getElementById("total-items");
         cart[idx].quantity--
         cartCounter.textContent--
       } else {
-          cartCounter.textContent -= cart[idx].quantity;
-          cart.splice(idx, 1)
+        cartCounter.textContent -= cart[idx].quantity
+        cart.splice(idx, 1)
       }
       cartDisplayToPage()
     })
@@ -312,23 +321,43 @@ let totalItems = document.getElementById("total-items");
       cartCounter.textContent++
       cartDisplayToPage()
     })
-    totalItems.textContent = cartCounter.textContent;
+    totalItems.textContent = cartCounter.textContent
   })
 }
 
 // setting up the cart close button to close the cart whenever it is clicked
-let closeCartBtn = document.querySelector('.cart-btn-close')
+// let closeCartBtn = document.querySelector('.cart-btn-close')
 
-closeCartBtn.addEventListener('click', () => {
-  cartItemsContainer.classList.remove('cart-show')
-})
+// closeCartBtn.addEventListener('click', () => {
+//   cartItemsContainer.classList.remove('cart-show')
+// })
 
-let clearCartBtn = document.querySelector('.cart-btn-clear')
+  // Close cart functionality
+        document.getElementById('close-cart').addEventListener('click', () => {
+          cartItemsContainer.style.visibility = 'hidden'
+            cartItemsContainer.style.top = '-35em';
+            cartItemsContainer.style.opacity = '0';
+            // alert('Cart closed!');
+        });
+
+// let clearCartBtn = document.querySelector('.cart-btn-clear')
+let clearCartBtn = document.getElementById('clear-cart');
 
 clearCartBtn.addEventListener('click', () => {
   cart = []
   cartCounter.textContent = 0
   count = 0
+  document.getElementById('total-items').textContent = 0;
+
+  let cartItems = document.getElementsByClassName('cart-item');
+  cartItems.innerHTML = '<p style="text-align: center; color: #1d1a1aff; padding: 20px;">Your cart is empty</p>';
+
+  // Disable checkout button
+            document.querySelector('.checkout').disabled = true;
+            document.querySelector('.checkout').style.opacity = '0.6';
+            
+            alert('Cart is cleared!');
+
   cartDisplayToPage()
 })
 
@@ -434,15 +463,13 @@ let cardIndex = 0
 
 // function to facilitate the display of elements for the chef card
 const displayChefCard = () => {
-  
   chefImage.src = chefData[cardIndex].img
   chefName.textContent = chefData[cardIndex].chefname
   chefDescription.textContent = chefData[cardIndex].description
   extraInfo.innerHTML = ` 
   <p><i class='bx  bx-building-house'></i>${chefData[cardIndex].nationality}</p>
   <p><i class='bx  bx-timer'></i>${chefData[cardIndex].speed}</p>
-  <p><i class='bx  bx-currency-notes'></i>${chefData[cardIndex].price}</p> `;
-  
+  <p><i class='bx  bx-currency-notes'></i>${chefData[cardIndex].price}</p> `
 }
 
 // function to disable buttons when at the last element in the list
