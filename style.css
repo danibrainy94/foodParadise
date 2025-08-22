@@ -263,7 +263,7 @@ li {
 
 #cart-items-container {
   width: 100lvw;
-  height: 70lvh;
+  /* height: 72lvh; */
   overflow: scroll;
   background-color: white;
   border-radius: 0 0 15px 15px;
